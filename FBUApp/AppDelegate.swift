@@ -13,6 +13,8 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -22,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             configuration.clientKey = "huhbbilvuubltehirelujchfhjdhgurr"
             configuration.server = "http://appfbu.herokuapp.com/parse"
         }))
+        if PFUser.currentUser() != nil {
+            self.window?.rootViewController = storyboard.instantiateViewControllerWithIdentifier("MainNavigationController");
+        }
         return true
     }
 

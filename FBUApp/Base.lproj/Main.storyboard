@@ -59,13 +59,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eB-Ov-xQp">
-                                <rect key="frame" x="158" y="530" width="42" height="30"/>
-                                <state key="normal" title="Log in"/>
-                                <connections>
-                                    <segue destination="Wys-Rr-6Oi" kind="presentation" id="iTb-Wj-6rp"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W9R-Za-6vD">
                                 <rect key="frame" x="131" y="216" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -82,10 +75,22 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eB-Ov-xQp">
+                                <rect key="frame" x="158" y="530" width="42" height="30"/>
+                                <state key="normal" title="Log in"/>
+                                <connections>
+                                    <action selector="onLogin:" destination="eb1-HN-QNy" eventType="touchUpInside" id="Skn-Et-2KC"/>
+                                    <segue destination="Wys-Rr-6Oi" kind="presentation" id="iTb-Wj-6rp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="passwordField" destination="iEK-Or-2Eo" id="bYS-x9-QPc"/>
+                        <outlet property="usernameField" destination="W9R-Za-6vD" id="TSz-3z-7af"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n4q-DF-DxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -124,6 +129,14 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6WJ-Du-l8g">
                                 <rect key="frame" x="67" y="310" width="240" height="128"/>
                                 <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDx-GM-0Bw">
+                                <rect key="frame" x="160" y="482" width="55" height="30"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="onLogOut:" destination="Unf-ML-Mzm" eventType="touchUpInside" id="0pg-2A-SkQ"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="logOutSegue" id="vt3-6X-oAG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -173,6 +186,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgS-ba-DZq">
+                                <rect key="frame" x="149" y="89" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="Unf-ML-Mzm" kind="show" id="QcO-4v-7ml"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -503,7 +523,7 @@
         <!--Navigation Controller-->
         <scene sceneID="6ks-Le-bLz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wys-Rr-6Oi" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Wys-Rr-6Oi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pij-03-7un">
@@ -521,6 +541,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NcW-oo-k5q"/>
+        <segue reference="iTb-Wj-6rp"/>
+        <segue reference="vt3-6X-oAG"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class AccountViewController: UIViewController {
 
@@ -19,6 +20,11 @@ class AccountViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func onLogOut(sender: AnyObject) {
+        PFUser.logOutInBackgroundWithBlock { (error: NSError?) in
+            self.performSegueWithIdentifier("logOutSegue", sender: nil)
+        }
     }
     
 
