@@ -19,6 +19,7 @@
 		881F347D1D2C4E21000C8049 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881F347C1D2C4E21000C8049 /* UploadViewController.swift */; };
 		881F347F1D2C4E2F000C8049 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881F347E1D2C4E2F000C8049 /* SavedViewController.swift */; };
 		881F34811D2C4E39000C8049 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881F34801D2C4E39000C8049 /* DetailViewController.swift */; };
+		881F34831D2C5457000C8049 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881F34821D2C5457000C8049 /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		881F347C1D2C4E21000C8049 /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		881F347E1D2C4E2F000C8049 /* SavedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		881F34801D2C4E39000C8049 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		881F34821D2C5457000C8049 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				881F347C1D2C4E21000C8049 /* UploadViewController.swift */,
 				881F347E1D2C4E2F000C8049 /* SavedViewController.swift */,
 				881F34801D2C4E39000C8049 /* DetailViewController.swift */,
+				881F34821D2C5457000C8049 /* AccountViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				881F34641D2C4A83000C8049 /* ViewController.swift in Sources */,
 				881F34771D2C4E05000C8049 /* SignUpViewController.swift in Sources */,
 				881F347B1D2C4E1A000C8049 /* MainViewController.swift in Sources */,
+				881F34831D2C5457000C8049 /* AccountViewController.swift in Sources */,
 				881F34791D2C4E0F000C8049 /* LoginViewController.swift in Sources */,
 				881F347F1D2C4E2F000C8049 /* SavedViewController.swift in Sources */,
 				881F34621D2C4A83000C8049 /* AppDelegate.swift in Sources */,
