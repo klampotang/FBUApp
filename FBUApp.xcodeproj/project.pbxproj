@@ -20,9 +20,12 @@
 		881F347F1D2C4E2F000C8049 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881F347E1D2C4E2F000C8049 /* SavedViewController.swift */; };
 		881F34811D2C4E39000C8049 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881F34801D2C4E39000C8049 /* DetailViewController.swift */; };
 		881F34831D2C5457000C8049 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881F34821D2C5457000C8049 /* AccountViewController.swift */; };
+		A138D0041B23FB800149B814 /* Pods_FBUApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B9C629BF0DD91A19220201 /* Pods_FBUApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32A882C24336C6426FEE2728 /* Pods-FBUApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBUApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBUApp/Pods-FBUApp.release.xcconfig"; sourceTree = "<group>"; };
+		4E638B8D62E4A24A12EB70C2 /* Pods-FBUApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBUApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBUApp/Pods-FBUApp.debug.xcconfig"; sourceTree = "<group>"; };
 		881F345E1D2C4A83000C8049 /* FBUApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBUApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		881F34611D2C4A83000C8049 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		881F34631D2C4A83000C8049 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		881F347E1D2C4E2F000C8049 /* SavedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		881F34801D2C4E39000C8049 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		881F34821D2C5457000C8049 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		C5B9C629BF0DD91A19220201 /* Pods_FBUApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBUApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A138D0041B23FB800149B814 /* Pods_FBUApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,8 @@
 			children = (
 				881F34601D2C4A83000C8049 /* FBUApp */,
 				881F345F1D2C4A83000C8049 /* Products */,
+				C2B9DD1F950BC86B69B16731 /* Pods */,
+				9A8609B27A393217EB743638 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +103,23 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		9A8609B27A393217EB743638 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5B9C629BF0DD91A19220201 /* Pods_FBUApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2B9DD1F950BC86B69B16731 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E638B8D62E4A24A12EB70C2 /* Pods-FBUApp.debug.xcconfig */,
+				32A882C24336C6426FEE2728 /* Pods-FBUApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +127,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 881F34701D2C4A83000C8049 /* Build configuration list for PBXNativeTarget "FBUApp" */;
 			buildPhases = (
+				8F6A2AE8F7A684D1AF675551 /* [CP] Check Pods Manifest.lock */,
 				881F345A1D2C4A83000C8049 /* Sources */,
 				881F345B1D2C4A83000C8049 /* Frameworks */,
 				881F345C1D2C4A83000C8049 /* Resources */,
+				CC67793E386CE1BAC0BF75DC /* [CP] Embed Pods Frameworks */,
+				D23F8D61B1D5EC47AB3E8839 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -162,6 +189,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8F6A2AE8F7A684D1AF675551 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CC67793E386CE1BAC0BF75DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FBUApp/Pods-FBUApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D23F8D61B1D5EC47AB3E8839 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FBUApp/Pods-FBUApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		881F345A1D2C4A83000C8049 /* Sources */ = {
@@ -288,6 +363,7 @@
 		};
 		881F34711D2C4A83000C8049 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E638B8D62E4A24A12EB70C2 /* Pods-FBUApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FBUApp/Info.plist;
@@ -299,6 +375,7 @@
 		};
 		881F34721D2C4A83000C8049 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32A882C24336C6426FEE2728 /* Pods-FBUApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FBUApp/Info.plist;
@@ -327,6 +404,7 @@
 				881F34721D2C4A83000C8049 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

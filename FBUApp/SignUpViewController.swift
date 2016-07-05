@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import Parse
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var ageTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,14 +28,29 @@ class SignUpViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func onSignUp(sender: AnyObject) {
+        // initialize a user object
+        let newUser = PFUser()
+        
+        // set user properties
+        newUser.username = usernameTextField.text
+        newUser.password = passwordTextField.text
+        //newUser.setObject(firstNameTextField.text!, forKey: "firstName")
+        //newUser.setObject(lastNameTextField.text!, forKey: "lastName")
+        //newUser.setObject(ageTextField.text!, forKey: "age")
+        
+        
+        // call sign up function on the object
+        newUser.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if let error = error {
+                print(error)
+            } else {
+                print("User Registered successfully")
+                // manually segue to logged in view
+                
+            }
+        }
     }
-    */
+
 
 }

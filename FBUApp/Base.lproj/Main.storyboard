@@ -436,6 +436,7 @@
                                 <rect key="frame" x="161" y="523" width="52" height="30"/>
                                 <state key="normal" title="Sign up"/>
                                 <connections>
+                                    <action selector="onSignUp:" destination="Vp8-RL-dhW" eventType="touchUpInside" id="EUA-bI-vdo"/>
                                     <segue destination="Wys-Rr-6Oi" kind="presentation" id="NcW-oo-k5q"/>
                                 </connections>
                             </button>
@@ -468,6 +469,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="ageTextField" destination="K5w-4B-EDz" id="pBs-XX-bTH"/>
+                        <outlet property="firstNameTextField" destination="xge-RG-eyY" id="h3S-et-B58"/>
+                        <outlet property="lastNameTextField" destination="Irv-5w-WoM" id="2Hg-0e-Ndx"/>
+                        <outlet property="passwordTextField" destination="vMy-ZO-hVf" id="8Mo-Ws-E7R"/>
+                        <outlet property="usernameTextField" destination="KAt-tG-bLN" id="AxW-Dz-s5P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QoC-Dn-30N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -513,6 +521,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iTb-Wj-6rp"/>
+        <segue reference="NcW-oo-k5q"/>
     </inferredMetricsTieBreakers>
 </document>
