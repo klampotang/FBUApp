@@ -21,6 +21,7 @@
 		881F34811D2C4E39000C8049 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881F34801D2C4E39000C8049 /* DetailViewController.swift */; };
 		881F34831D2C5457000C8049 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881F34821D2C5457000C8049 /* AccountViewController.swift */; };
 		A138D0041B23FB800149B814 /* Pods_FBUApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B9C629BF0DD91A19220201 /* Pods_FBUApp.framework */; };
+		AF42BD4C1D2D5A6000554512 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42BD4B1D2D5A6000554512 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		881F347E1D2C4E2F000C8049 /* SavedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		881F34801D2C4E39000C8049 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		881F34821D2C5457000C8049 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		AF42BD4B1D2D5A6000554512 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C5B9C629BF0DD91A19220201 /* Pods_FBUApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBUApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				881F34681D2C4A83000C8049 /* Assets.xcassets */,
 				881F346A1D2C4A83000C8049 /* LaunchScreen.storyboard */,
 				881F346D1D2C4A83000C8049 /* Info.plist */,
+				AF42BD4B1D2D5A6000554512 /* MainView.swift */,
 			);
 			path = FBUApp;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				881F34771D2C4E05000C8049 /* SignUpViewController.swift in Sources */,
 				881F347B1D2C4E1A000C8049 /* MainViewController.swift in Sources */,
 				881F34831D2C5457000C8049 /* AccountViewController.swift in Sources */,
+				AF42BD4C1D2D5A6000554512 /* MainView.swift in Sources */,
 				881F34791D2C4E0F000C8049 /* LoginViewController.swift in Sources */,
 				881F347F1D2C4E2F000C8049 /* SavedViewController.swift in Sources */,
 				881F34621D2C4A83000C8049 /* AppDelegate.swift in Sources */,
