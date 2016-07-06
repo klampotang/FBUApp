@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import MBProgressHUD
 
 class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var newCard: Card?
@@ -17,6 +18,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var uploadImageView: UIImageView!
     @IBOutlet weak var priceSegControl: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.tap(_:)))
@@ -78,7 +80,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         if(successValue)
         {
             // Hide HUD once the network request comes back (must be done on main UI thread)
-            //MBProgressHUD.hideHUDForView(self.view, animated: true)
+            //0MBProgressHUD.hideHUDForView(self.view, animated: true)
             
             uploadImageView.hidden = true
             buttonLibraryTapped.hidden  = false
