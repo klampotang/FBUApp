@@ -77,12 +77,15 @@ class MainView: UIView {
         print(swipe)
         print(gravityX)
         print(gravityY)
-        //gravityBehavior.gravityDirection = CGVectorMake(CGFloat(gravityX), CGFloat(gravityY))
+        gravityBehavior.gravityDirection = CGVectorMake(CGFloat(gravityX), CGFloat(gravityY))
         animator.addBehavior(gravityBehavior)
-        /*
+        
         let pushBehavior:UIPushBehavior = UIPushBehavior(items: [self], mode: UIPushBehaviorMode.Instantaneous)
+        if swipe == Swipe.Down {
+            pushBehavior.setAngle(CGFloat(M_PI_2), magnitude: CGFloat(magnitude))
+        }
         pushBehavior.magnitude = CGFloat(magnitude)
-        animator.addBehavior(pushBehavior)*/
+        animator.addBehavior(pushBehavior)
         
     }
     

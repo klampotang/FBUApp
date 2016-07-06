@@ -23,8 +23,8 @@ class MainViewController: UIViewController {
     var images: [UIImage] = [UIImage(named: "demo1")!, UIImage(named: "demo2")!, UIImage(named: "demo3")!, UIImage(named: "demo4")!, UIImage(named: "demo5")!, UIImage(named: "demo6")!, UIImage(named: "demo7")!, UIImage(named: "demo8")!]
     var centerXFactor: CGFloat = 2.0
     var centerYFactor: CGFloat = 2.5
-    var frameXFactor: CGFloat = 40
-    var frameYFactor: CGFloat = 40
+    var frameXFactor: CGFloat = 10
+    var frameYFactor: CGFloat = 10
     
     var currentMainView: MainView!
     var mainViews: [MainView] = []
@@ -48,7 +48,7 @@ class MainViewController: UIViewController {
         
         for image in images {
             currentMainView = MainView(
-                frame: CGRectMake(100, 100, self.view.frame.width - frameXFactor, self.view.frame.width - frameYFactor),
+                frame: CGRectMake(0, 0, self.view.frame.width - frameXFactor, self.view.frame.width - frameYFactor),
                 center: CGPoint(x: self.view.bounds.width / centerXFactor, y: self.view.bounds.height / centerYFactor),
                 image: image)
             self.mainViews.append(currentMainView)
@@ -71,7 +71,7 @@ class MainViewController: UIViewController {
         self.mainViews.removeAtIndex(self.mainViews.count - 1)
         if self.mainViews.count - 1 < 0 {
             let noMoreView = MainView(
-                frame: CGRectMake(0, 0, self.view.frame.width - 50, self.view.frame.width - 50),
+                frame: CGRectMake(0, 0, self.view.frame.width - frameXFactor, self.view.frame.width - frameYFactor),
                 center: CGPoint(x: self.view.bounds.width / centerXFactor, y: self.view.bounds.height / centerYFactor),
                 image: UIImage()
             )
@@ -91,17 +91,17 @@ class MainViewController: UIViewController {
         if gesture.state == UIGestureRecognizerState.Ended {
             // Determine if we need to swipe off or return to center
             let location = gesture.locationInView(self.view)
-            if self.currentMainView.center.x / self.view.bounds.maxX > 0.8 {
+            if self.currentMainView.center.x / self.view.bounds.maxX > 0.6 {
                 print("swipe right")
                 self.determineJudgement(.Right)
                 
             }
-            else if self.currentMainView.center.x / self.view.bounds.maxX < 0.2 {
+            else if self.currentMainView.center.x / self.view.bounds.maxX < 0.4 {
                 print("swipe left")
                 self.determineJudgement(.Left)
                 
             }
-            else if self.currentMainView.center.y / self.view.bounds.maxY > 0.8 {
+            else if self.currentMainView.center.y / self.view.bounds.maxY > 0.5 {
                 print("swipe down")
                 self.determineJudgement(.Down)
                 
