@@ -22,6 +22,18 @@ class MainViewController: UIViewController {
     var currentMainView: MainView!
     var mainViews: [MainView] = []
     var saved: [Card] = []
+    
+    
+    @IBAction func onX(sender: AnyObject) {
+    }
+    
+    @IBAction func onLove(sender: AnyObject) {
+    }
+    
+    @IBAction func onSave(sender: AnyObject) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

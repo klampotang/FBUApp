@@ -166,15 +166,24 @@
                                 <rect key="frame" x="71" y="546" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="x"/>
+                                <connections>
+                                    <action selector="onX:" destination="vHC-0F-DAi" eventType="touchUpInside" id="AeI-pr-5cI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D06-2M-0dI">
                                 <rect key="frame" x="179" y="546" width="30" height="30"/>
                                 <state key="normal" title="*"/>
+                                <connections>
+                                    <action selector="onSave:" destination="vHC-0F-DAi" eventType="touchUpInside" id="7ZU-te-nDr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrw-gs-TPh">
                                 <rect key="frame" x="293" y="546" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="&lt;3"/>
+                                <connections>
+                                    <action selector="onLove:" destination="vHC-0F-DAi" eventType="touchUpInside" id="58b-zB-tTP"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWN-5y-Sej">
                                 <rect key="frame" x="283" y="442" width="40" height="21"/>
@@ -411,6 +420,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91O-iH-VQD">
                                 <rect key="frame" x="25" y="106" width="330" height="316"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="imageViewTapped:" destination="lHt-4G-p2x" eventType="touchUpInside" id="orA-6n-6k3"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2lm-a3-0Tp">
                                 <rect key="frame" x="145" y="465" width="97" height="30"/>
@@ -427,10 +439,29 @@
                                     <segment title="$$$$"/>
                                 </segments>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3H-PY-FeD">
+                                <rect key="frame" x="74" y="598" width="60" height="30"/>
+                                <state key="normal" title="UPLOAD"/>
+                                <connections>
+                                    <action selector="onUpload:" destination="lHt-4G-p2x" eventType="touchUpInside" id="Rk7-qD-idE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZE-Qh-DLl">
+                                <rect key="frame" x="95" y="427" width="197" height="30"/>
+                                <state key="normal" title="Upload from Camera Instead"/>
+                                <connections>
+                                    <action selector="uploadFromCamButton:" destination="lHt-4G-p2x" eventType="touchUpInside" id="ON6-f9-BPj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="locationTextField" destination="2lm-a3-0Tp" id="H4B-7L-d3q"/>
+                        <outlet property="priceSegControl" destination="Gf0-lx-8Hl" id="GE0-Dr-5bO"/>
+                        <outlet property="uploadImageView" destination="6Tm-kd-AKx" id="HEh-ID-W5n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jim-Zq-9nC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

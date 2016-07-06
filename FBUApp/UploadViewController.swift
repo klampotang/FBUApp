@@ -12,6 +12,9 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     var newCard: Card?
     //ADD AN OUTLET HERE FOR IMAGE
     
+    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var uploadImageView: UIImageView!
+    @IBOutlet weak var priceSegControl: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,6 +40,13 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
+    @IBAction func uploadFromCamButton(sender: AnyObject) {
+    }
+    @IBAction func imageViewTapped(sender: AnyObject) {
+    }
+    @IBAction func onUpload(sender: AnyObject) {
+        
+    }
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         // Get the image captured by the UIImagePickerController
         //let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
