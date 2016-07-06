@@ -35,9 +35,10 @@ class SignUpViewController: UIViewController {
         // set user properties
         newUser.username = usernameTextField.text
         newUser.password = passwordTextField.text
-        //newUser.setObject(firstNameTextField.text!, forKey: "firstName")
-        //newUser.setObject(lastNameTextField.text!, forKey: "lastName")
-        //newUser.setObject(ageTextField.text!, forKey: "age")
+        newUser.setObject(firstNameTextField.text!, forKey: "firstName")
+        newUser.setObject(lastNameTextField.text!, forKey: "lastName")
+        newUser.setObject(ageTextField.text!, forKey: "age")
+        //Hello this is my comment
         
         
         // call sign up function on the object
