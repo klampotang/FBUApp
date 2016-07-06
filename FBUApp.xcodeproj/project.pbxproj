@@ -180,7 +180,7 @@
 				TargetAttributes = {
 					881F345D1D2C4A83000C8049 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = LQWCHDPX8E;
+						DevelopmentTeam = F4P428X9U6;
 					};
 				};
 			};
@@ -398,7 +398,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FBUApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.klampotang.FBUApp3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.klampotang.FBUApp4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -413,7 +413,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FBUApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.klampotang.FBUApp3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.klampotang.FBUApp4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
