@@ -6,15 +6,11 @@
 //  Copyright © 2016 Kelly Lampotang. All rights reserved.
 //
 
-import UIKit
+/*import UIKit
 
 class FourSquareLocation: NSObject {
     let CLIENT_ID = "VM3U2MOM4P4IOVBQMZW5NSQH1MJEANGW51YA4SVMW4JLAEBH"
     let CLIENT_SECRET = "5FHY2RUJVEW2YRHJ3J53XN5J0U2HUY5KNQMFSCHJVMQPMDUC"
-    init() {
-        <#code#>
-    }
-    
     
     func fetchLocations(query: String, near: String = "San Francisco") {
         let baseUrlString = "https://api.foursquare.com/v2/venues/search?"
@@ -45,4 +41,4 @@ class FourSquareLocation: NSObject {
         task.resume()
 
 
-}
+}*/
