@@ -104,7 +104,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n4q-DF-DxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="5Se-7n-of9"/>
             </objects>
-            <point key="canvasLocation" x="1423.5" y="752.5"/>
+            <point key="canvasLocation" x="1367.5" y="729.5"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="gTQ-Tj-9TT">
@@ -176,6 +176,13 @@
                                     <action selector="onX:" destination="vHC-0F-DAi" eventType="touchUpInside" id="AeI-pr-5cI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D06-2M-0dI">
+                                <rect key="frame" x="158" y="522" width="73" height="55"/>
+                                <state key="normal" image="saveImage"/>
+                                <connections>
+                                    <action selector="onSave:" destination="vHC-0F-DAi" eventType="touchUpInside" id="7ZU-te-nDr"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrw-gs-TPh">
                                 <rect key="frame" x="276" y="524" width="54" height="52"/>
                                 <state key="normal" image="heartImage"/>
@@ -201,30 +208,23 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xXm-Ei-vYn">
                                 <rect key="frame" x="38" y="145" width="298" height="259"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgS-ba-DZq">
-                                <rect key="frame" x="171" y="617" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgS-ba-DZq">
+                                <rect key="frame" x="157" y="609" width="61" height="50"/>
+                                <state key="normal" image="account"/>
                                 <connections>
                                     <segue destination="Unf-ML-Mzm" kind="show" id="QcO-4v-7ml"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D06-2M-0dI">
-                                <rect key="frame" x="158" y="522" width="73" height="55"/>
-                                <state key="normal" image="saveImage"/>
-                                <connections>
-                                    <action selector="onSave:" destination="vHC-0F-DAi" eventType="touchUpInside" id="7ZU-te-nDr"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="9PH-CZ-Vuz">
-                        <barButtonItem key="leftBarButtonItem" title="upload" id="1dj-As-YKX">
+                        <barButtonItem key="leftBarButtonItem" image="uploadBarButton" id="1dj-As-YKX">
                             <connections>
                                 <segue destination="lHt-4G-p2x" kind="presentation" id="t86-qL-XFO"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="saved" id="JlP-Qe-Ypn">
+                        <barButtonItem key="rightBarButtonItem" image="savedCards" id="JlP-Qe-Ypn">
                             <connections>
                                 <segue destination="78t-1g-K4P" kind="show" id="tMS-wn-fes"/>
                             </connections>
@@ -603,15 +603,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="account" width="700" height="585"/>
         <image name="cityBackgroundImage" width="736" height="1308"/>
         <image name="dimiss" width="700" height="591"/>
         <image name="dislikeImage" width="700" height="600"/>
         <image name="heartImage" width="1200" height="1200"/>
         <image name="saveImage" width="700" height="612"/>
+        <image name="savedCards" width="24" height="24"/>
+        <image name="uploadBarButton" width="24" height="24"/>
         <image name="uploadPic" width="700" height="602"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NcW-oo-k5q"/>
+        <segue reference="iTb-Wj-6rp"/>
         <segue reference="vt3-6X-oAG"/>
     </inferredMetricsTieBreakers>
 </document>
