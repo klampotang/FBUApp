@@ -13,7 +13,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    var images: [UIImage] = [UIImage(named: "bluebird")!, UIImage(named: "favorite-action")!, UIImage(named: "reply-action")!, UIImage(named: "retweet-action")!]
+    var images: [UIImage] = [UIImage(named: "demo1")!, UIImage(named: "demo2")!, UIImage(named: "demo3")!]
     
     var currentMainView: MainView!
     var mainViews: [MainView] = []
@@ -24,8 +24,8 @@ class MainViewController: UIViewController {
         
         for image in images {
             currentMainView = MainView(
-                frame: CGRectMake(0, 0, self.view.frame.width - 50, self.view.frame.width - 50),
-                center: CGPoint(x: self.view.bounds.width / 2, y: self.view.bounds.height / 3),
+                frame: CGRectMake(100, 100, self.view.frame.width - 40, self.view.frame.width - 40),
+                center: CGPoint(x: self.view.bounds.width / 2, y: self.view.bounds.height / 2),
                 image: image)
             self.mainViews.append(currentMainView)
         }
