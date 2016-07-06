@@ -8,14 +8,19 @@
 
 import UIKit
 
-class FourSquareLocation: NSObject {
+class FourSquareClient: NSObject {
     var results: NSArray = []
-    var location: String?
+    lazy var location: String = ""
     let CLIENT_ID = "VM3U2MOM4P4IOVBQMZW5NSQH1MJEANGW51YA4SVMW4JLAEBH"
     let CLIENT_SECRET = "5FHY2RUJVEW2YRHJ3J53XN5J0U2HUY5KNQMFSCHJVMQPMDUC"
     
+    override init() {
+        super.init()
+        location = ""
+        
+    }
     
-    func fetchLocations(query: String, near: String = "San Francisco") {
+    func fetchLocations(query: String, near: String = "") {
         let baseUrlString = "https://api.foursquare.com/v2/venues/search?"
         let queryString = "client_id=\(CLIENT_ID)&client_secret=\(CLIENT_SECRET)&v=20141020&near=\(near),CA&query=\(query)"
         
