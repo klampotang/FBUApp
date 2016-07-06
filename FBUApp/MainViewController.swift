@@ -14,9 +14,14 @@ import UIKit
 
 class MainViewController: UIViewController {
     var images: [UIImage] = [UIImage(named: "demo1")!, UIImage(named: "demo2")!, UIImage(named: "demo3")!]
+    var centerXFactor: CGFloat = 2.0
+    var centerYFactor: CGFloat = 2.5
+    var frameXFactor: CGFloat = 40
+    var frameYFactor: CGFloat = 40
     
     var currentMainView: MainView!
     var mainViews: [MainView] = []
+    var saved: [Card] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,8 +29,8 @@ class MainViewController: UIViewController {
         
         for image in images {
             currentMainView = MainView(
-                frame: CGRectMake(100, 100, self.view.frame.width - 40, self.view.frame.width - 40),
-                center: CGPoint(x: self.view.bounds.width / 2, y: self.view.bounds.height / 2),
+                frame: CGRectMake(100, 100, self.view.frame.width - frameXFactor, self.view.frame.width - frameYFactor),
+                center: CGPoint(x: self.view.bounds.width / centerXFactor, y: self.view.bounds.height / centerYFactor),
                 image: image)
             self.mainViews.append(currentMainView)
         }
@@ -48,7 +53,7 @@ class MainViewController: UIViewController {
         if self.mainViews.count - 1 < 0 {
             let noMoreView = MainView(
                 frame: CGRectMake(0, 0, self.view.frame.width - 50, self.view.frame.width - 50),
-                center: CGPoint(x: self.view.bounds.width / 2, y: self.view.bounds.height / 3),
+                center: CGPoint(x: self.view.bounds.width / centerXFactor, y: self.view.bounds.height / centerYFactor),
                 image: UIImage()
             )
             self.mainViews.append(noMoreView)
