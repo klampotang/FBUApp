@@ -22,6 +22,7 @@
 		881F34831D2C5457000C8049 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881F34821D2C5457000C8049 /* AccountViewController.swift */; };
 		A138D0041B23FB800149B814 /* Pods_FBUApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B9C629BF0DD91A19220201 /* Pods_FBUApp.framework */; };
 		AF42BD4C1D2D5A6000554512 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42BD4B1D2D5A6000554512 /* MainView.swift */; };
+		EDF427DC1D2D7DAA0075DFC3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF427DB1D2D7DAA0075DFC3 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		881F34821D2C5457000C8049 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		AF42BD4B1D2D5A6000554512 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C5B9C629BF0DD91A19220201 /* Pods_FBUApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBUApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDF427DB1D2D7DAA0075DFC3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		881F34601D2C4A83000C8049 /* FBUApp */ = {
 			isa = PBXGroup;
 			children = (
+				EDF427DA1D2D7D750075DFC3 /* Model */,
 				881F34731D2C4DC6000C8049 /* View Controllers */,
 				881F34611D2C4A83000C8049 /* AppDelegate.swift */,
 				881F34631D2C4A83000C8049 /* ViewController.swift */,
@@ -121,6 +124,14 @@
 				32A882C24336C6426FEE2728 /* Pods-FBUApp.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EDF427DA1D2D7D750075DFC3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EDF427DB1D2D7DAA0075DFC3 /* User.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +265,7 @@
 				881F347B1D2C4E1A000C8049 /* MainViewController.swift in Sources */,
 				881F34831D2C5457000C8049 /* AccountViewController.swift in Sources */,
 				AF42BD4C1D2D5A6000554512 /* MainView.swift in Sources */,
+				EDF427DC1D2D7DAA0075DFC3 /* User.swift in Sources */,
 				881F34791D2C4E0F000C8049 /* LoginViewController.swift in Sources */,
 				881F347F1D2C4E2F000C8049 /* SavedViewController.swift in Sources */,
 				881F34621D2C4A83000C8049 /* AppDelegate.swift in Sources */,
