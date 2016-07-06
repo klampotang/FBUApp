@@ -5,8 +5,6 @@
 //  Created by Kelly Lampotang on 7/5/16.
 //  Copyright © 2016 Kelly Lampotang. All rights reserved.
 //
-//Comment numba 2 
-//number 3 comment
 
 import UIKit
 import Parse
@@ -37,10 +35,6 @@ class SignUpViewController: UIViewController {
         // set user properties
         newUser.username = usernameTextField.text
         newUser.password = passwordTextField.text
-        newUser.setObject(firstNameTextField.text!, forKey: "firstName")
-        newUser.setObject(lastNameTextField.text!, forKey: "lastName")
-        newUser.setObject(ageTextField.text!, forKey: "age")
-        //Hello this is my comment
         
         
         // call sign up function on the object
@@ -49,6 +43,14 @@ class SignUpViewController: UIViewController {
                 print(error)
             } else {
                 print("User Registered successfully")
+                
+                let currUser = PFUser.currentUser()
+                
+                currUser!.setObject(self.firstNameTextField.text!, forKey: "firstName")
+                currUser!.setObject(self.lastNameTextField.text!, forKey: "lastName")
+                currUser!.setObject(self.ageTextField.text!, forKey: "age")
+                let firstNameCurrUser = currUser?["firstName"] as! String
+                print(firstNameCurrUser)
                 // manually segue to logged in view
                 
             }
