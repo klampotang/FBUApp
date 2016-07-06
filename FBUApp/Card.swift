@@ -22,6 +22,7 @@ class Card: NSObject {
         card["location"] = location
         card["likesCount"] = 0
         card["commentsCount"] = 0
+        card["price"] = 0
         
         // Save object (following function will save the object in Parse asynchronously)
         card.saveInBackgroundWithBlock{(success, error) -> Void in
