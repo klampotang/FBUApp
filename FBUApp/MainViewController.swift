@@ -6,6 +6,8 @@
 //  Copyright © 2016 Kelly Lampotang. All rights reserved.
 //
 
+// pls merge
+
 import UIKit
 
 class MainViewController: UIViewController {
