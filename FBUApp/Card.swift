@@ -15,21 +15,17 @@ class Card: NSObject {
     var user: User!
     var id: Int?
     var location: String?
-    
+    var dictionary: NSDictionary?
+
     init(dictionary: NSDictionary) {
         self.dictionary = dictionary
         location = dictionary["description"] as? String
         distance = (dictionary["distance"] as? Int) ?? 0
         likes = (dictionary["likes"] as? Int) ?? 0
-        let profileUlString = dictionary["profile_image_url_https"] as? String
-        if let postUrl = postUrlString {
-            postUrl = NSURL(string: postUrlString)!
-            let modifiedPostUrlString = postUrlString.stringByReplacingOccurrencesOfString("_normal", withString: "")
-            postUrl = NSURL(string: modifiedPostUrlString)
             
         }
         
     }
 
 
-}
+
