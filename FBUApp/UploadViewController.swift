@@ -19,10 +19,13 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var priceSegControl: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.tap(_:)))
+        view.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view.
     }
-
+    func tap(gesture: UITapGestureRecognizer) {
+        locationTextField.resignFirstResponder()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -71,7 +74,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         let priceValue = priceSegControl.selectedSegmentIndex
         //newimage = resize(newimage!, newSize: CGSize)
-        let successValue = Card.cardImage(newImage, withLocation: locationText)
+        let successValue = Card.cardImage(newImage, withLocation: locationText, price: priceValue)
         if(successValue)
         {
             // Hide HUD once the network request comes back (must be done on main UI thread)
@@ -85,6 +88,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         else
         {
             //self.alert("Error")
+            print("Error posting")
         }
 
     }

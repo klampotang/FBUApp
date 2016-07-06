@@ -460,6 +460,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="sEo-yU-qO5" appends="YES" id="xUB-IR-54c"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -471,6 +475,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jim-Zq-9nC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="sEo-yU-qO5"/>
             </objects>
             <point key="canvasLocation" x="3095.5" y="82.5"/>
         </scene>
