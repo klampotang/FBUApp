@@ -85,6 +85,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="5Se-7n-of9" appends="YES" id="ciu-4Q-fr6"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -93,6 +97,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n4q-DF-DxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="5Se-7n-of9"/>
             </objects>
             <point key="canvasLocation" x="1423.5" y="752.5"/>
         </scene>
@@ -458,6 +463,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="buttonLibraryTapped" destination="91O-iH-VQD" id="6Xk-5n-Vce"/>
+                        <outlet property="buttonPromptCam" destination="rZE-Qh-DLl" id="VGV-cD-ApQ"/>
                         <outlet property="locationTextField" destination="2lm-a3-0Tp" id="H4B-7L-d3q"/>
                         <outlet property="priceSegControl" destination="Gf0-lx-8Hl" id="GE0-Dr-5bO"/>
                         <outlet property="uploadImageView" destination="6Tm-kd-AKx" id="HEh-ID-W5n"/>

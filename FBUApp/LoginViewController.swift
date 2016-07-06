@@ -16,8 +16,14 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.tap(_:)))
+        view.addGestureRecognizer(tapGesture)
 
         // Do any additional setup after loading the view.
+    }
+    func tap(gesture: UITapGestureRecognizer) {
+        usernameField.resignFirstResponder()
+        passwordField.resignFirstResponder()
     }
 
     @IBAction func onLogin(sender: AnyObject) {

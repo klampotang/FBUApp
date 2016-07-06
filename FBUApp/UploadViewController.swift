@@ -10,8 +10,10 @@ import UIKit
 
 class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var newCard: Card?
-    //ADD AN OUTLET HERE FOR IMAGE
+    var newImage : UIImage?
     
+    @IBOutlet weak var buttonLibraryTapped: UIButton!
+    @IBOutlet weak var buttonPromptCam: UIButton!
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var uploadImageView: UIImageView!
     @IBOutlet weak var priceSegControl: UISegmentedControl!
@@ -32,12 +34,18 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     
     @IBAction func uploadFromCamButton(sender: AnyObject) {
+        let vc = UIImagePickerController()
+        vc.delegate = self
+        vc.allowsEditing = true
+        vc.sourceType = UIImagePickerControllerSourceType.Camera
+        
+        self.presentViewController(vc, animated: true, completion: nil)
     }
     @IBAction func imageViewTapped(sender: AnyObject) {
         let vc = UIImagePickerController()
         vc.delegate = self
         vc.allowsEditing = true
-        vc.sourceType = UIImagePickerControllerSourceType.Camera
+        vc.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         
         self.presentViewController(vc, animated: true, completion: nil)
     }
@@ -47,35 +55,35 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
         
         // Do something with the images (based on your use case)
-        uploadImageView.image = editedImage //TURN INTO OUTLET THING
+        uploadImageView.image = editedImage
+        newImage = editedImage
         //Hide the button
-        //promptButton.hidden = true //FIX Here
-        //uploadRollButton.hidden = true //FIX HERE
-        
+        buttonLibraryTapped.hidden = true
+        buttonPromptCam.hidden = true
         // Dismiss UIImagePickerController to go back to your original view controller
         dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func onUpload(sender: AnyObject) {
         // Display HUD right before the request is made
         //MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        let captionText = locationTextField.text;
-        print(captionText)
+        let locationText = locationTextField.text;
+        print(locationText)
         //newimage = resize(newimage!, newSize: CGSize)
-        /*let successValue = Card.postUserImage(newimage, withCaption: captionText!)
+        let successValue = Card.cardImage(newImage, withLocation: locationText)
         if(successValue)
         {
             // Hide HUD once the network request comes back (must be done on main UI thread)
             //MBProgressHUD.hideHUDForView(self.view, animated: true)
             //self.alert("Success")
             //cameraImage.hidden = true
-            //promptButton.hidden = false
-            //uploadRollButton.hidden = false
+            buttonLibraryTapped.hidden  = false
+            buttonPromptCam.hidden = false
             //captionTextField.text = ""
         }
         else
         {
             //self.alert("Error")
-        }*/
+        }
 
     }
     
