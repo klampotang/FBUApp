@@ -17,24 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pG-Xz-gec">
-                                <rect key="frame" x="142" y="220" width="90" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILz-0f-xx6">
-                                <rect key="frame" x="250" y="384" width="42" height="30"/>
-                                <state key="normal" title="Log in"/>
-                                <connections>
-                                    <segue destination="eb1-HN-QNy" kind="show" id="Rqo-fr-c6Y"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cityBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="uNo-1k-MuS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFj-c2-aXw">
-                                <rect key="frame" x="74" y="384" width="52" height="30"/>
-                                <state key="normal" title="Sign up"/>
+                                <rect key="frame" x="0.0" y="405" width="375" height="60"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.43838900862068964" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Sign up">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="Vp8-RL-dhW" kind="show" id="w5W-1C-BKo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILz-0f-xx6">
+                                <rect key="frame" x="0.0" y="500" width="375" height="59"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.43838900860000002" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Log in">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="eb1-HN-QNy" kind="show" id="Rqo-fr-c6Y"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -165,21 +170,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdm-P2-sxH">
-                                <rect key="frame" x="41" y="524" width="74" height="64"/>
+                                <rect key="frame" x="38" y="518" width="74" height="64"/>
                                 <state key="normal" image="dislikeImage"/>
                                 <connections>
                                     <action selector="onX:" destination="vHC-0F-DAi" eventType="touchUpInside" id="AeI-pr-5cI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D06-2M-0dI">
-                                <rect key="frame" x="179" y="546" width="30" height="30"/>
-                                <state key="normal" title="*"/>
-                                <connections>
-                                    <action selector="onSave:" destination="vHC-0F-DAi" eventType="touchUpInside" id="7ZU-te-nDr"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrw-gs-TPh">
-                                <rect key="frame" x="261" y="532" width="75" height="56"/>
+                                <rect key="frame" x="276" y="524" width="54" height="52"/>
                                 <state key="normal" image="heartImage"/>
                                 <connections>
                                     <action selector="onLove:" destination="vHC-0F-DAi" eventType="touchUpInside" id="58b-zB-tTP"/>
@@ -208,6 +206,13 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <segue destination="Unf-ML-Mzm" kind="show" id="QcO-4v-7ml"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D06-2M-0dI">
+                                <rect key="frame" x="158" y="522" width="73" height="55"/>
+                                <state key="normal" image="saveImage"/>
+                                <connections>
+                                    <action selector="onSave:" destination="vHC-0F-DAi" eventType="touchUpInside" id="7ZU-te-nDr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -416,9 +421,9 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SG7-fY-Kgw">
-                                <rect key="frame" x="281" y="617" width="52" height="30"/>
-                                <state key="normal" title="dismiss"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SG7-fY-Kgw">
+                                <rect key="frame" x="307" y="607" width="48" height="40"/>
+                                <state key="normal" image="dimiss"/>
                                 <connections>
                                     <action selector="onDismiss:" destination="lHt-4G-p2x" eventType="touchUpInside" id="MI5-5V-GSp"/>
                                 </connections>
@@ -427,8 +432,12 @@
                                 <rect key="frame" x="25" y="106" width="330" height="316"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91O-iH-VQD">
-                                <rect key="frame" x="25" y="106" width="330" height="316"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="25" y="106" width="168" height="316"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.43838900860000002" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="Upload from photo library">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="imageViewTapped:" destination="lHt-4G-p2x" eventType="touchUpInside" id="orA-6n-6k3"/>
                                 </connections>
@@ -448,16 +457,20 @@
                                     <segment title="$$$$"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3H-PY-FeD">
-                                <rect key="frame" x="74" y="598" width="60" height="30"/>
-                                <state key="normal" title="UPLOAD"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3H-PY-FeD">
+                                <rect key="frame" x="158" y="595" width="71" height="63"/>
+                                <state key="normal" image="uploadPic"/>
                                 <connections>
                                     <action selector="onUpload:" destination="lHt-4G-p2x" eventType="touchUpInside" id="Rk7-qD-idE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZE-Qh-DLl">
-                                <rect key="frame" x="95" y="427" width="197" height="30"/>
-                                <state key="normal" title="Upload from Camera Instead"/>
+                                <rect key="frame" x="194" y="106" width="161" height="316"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.30417564660000002" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="Upload from Camera Instead">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="uploadFromCamButton:" destination="lHt-4G-p2x" eventType="touchUpInside" id="ON6-f9-BPj"/>
                                 </connections>
@@ -590,8 +603,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cityBackgroundImage" width="736" height="1308"/>
+        <image name="dimiss" width="700" height="591"/>
         <image name="dislikeImage" width="700" height="600"/>
         <image name="heartImage" width="1200" height="1200"/>
+        <image name="saveImage" width="700" height="612"/>
+        <image name="uploadPic" width="700" height="602"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NcW-oo-k5q"/>
