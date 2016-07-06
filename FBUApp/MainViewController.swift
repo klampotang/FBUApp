@@ -178,6 +178,10 @@ class MainViewController: UIViewController {
         // Run the swipe animation
         self.currentMainView.swipe(swipe)
         
+        if swipe == .Down {
+
+        }
+        
         // Handle when we have no more matches
         print(self.mainViews.count)
         self.mainViews.removeAtIndex(self.mainViews.count - 1)
