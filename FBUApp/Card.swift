@@ -11,7 +11,7 @@ import Parse
 
 class Card: NSObject {
     
-    class func cardImage(image: UIImage?, withLocation location: String?) -> Bool {
+    class func cardImage(image: UIImage?, withLocation location: String?, price: Int?) -> Bool {
         // Create Parse object PFObject
         var successOverall = true
         let card = PFObject(className: "Card")
@@ -19,10 +19,10 @@ class Card: NSObject {
         // Add relevant fields to the object
         card["media"] = getPFFileFromImage(image) // PFFile column type
         card["author"] = PFUser.currentUser() // Pointer column type that points to PFUser
-        card["location"] = location
+        card["location"] = location!
         card["likesCount"] = 0
         card["commentsCount"] = 0
-        card["price"] = 0
+        card["price"] = price!
         
         // Save object (following function will save the object in Parse asynchronously)
         card.saveInBackgroundWithBlock{(success, error) -> Void in
