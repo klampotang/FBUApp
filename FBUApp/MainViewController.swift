@@ -9,7 +9,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    var images: [UIImage] = [UIImage(named: "bluebird"), UIImage(named: "favorite-action"), UIImage(named: "reply-action"), UIImage(named: "retweet-action")]
+    var images: [UIImage] = [UIImage(named: "bluebird")!, UIImage(named: "favorite-action")!, UIImage(named: "reply-action")!, UIImage(named: "retweet-action")!]
     
     var currentMainView: MainView!
     var mainViews: [MainView] = []
@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
             )
             self.mainViews.append(noMoreView)
             self.view.addSubview(noMoreView)
-            self.done = true
+            //self.done = true
             return
         }
         

@@ -15,10 +15,12 @@ class MainView: UIView {
     var animator: UIDynamicAnimator!
     
     init(frame: CGRect, center: CGPoint, image: UIImage) {
+        self.pictureView = UIImageView()
         self.pictureView.image = image
         super.init(frame: frame)
         self.center = center
         self.originalCenter = center
+        animator = UIDynamicAnimator(referenceView: self)
         self.pictureView.frame = CGRectIntegral(CGRectMake(
             0.0 + self.imageMarginSpace,
             0.0 + self.imageMarginSpace,
@@ -28,6 +30,10 @@ class MainView: UIView {
         
     self.addSubview(pictureView)
 
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     func swipe(answer: Bool) {
