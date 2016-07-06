@@ -8,8 +8,10 @@
 
 import UIKit
 
-class UploadViewController: UIViewController {
-
+class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    var newCard: Card?
+    //ADD AN OUTLET HERE FOR IMAGE
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,15 +26,32 @@ class UploadViewController: UIViewController {
     @IBAction func onDismiss(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //Turn into IBAction
+    func imageFieldTapped(sender: AnyObject) {
+        
+        let vc = UIImagePickerController()
+        vc.delegate = self
+        vc.allowsEditing = true
+        vc.sourceType = UIImagePickerControllerSourceType.Camera
+        
+        self.presentViewController(vc, animated: true, completion: nil)
     }
-    */
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        // Get the image captured by the UIImagePickerController
+        //let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        
+        // Do something with the images (based on your use case)
+        //newImage.image = editedImage //TURN INTO OUTLET THING
+        //Hide the button
+        //promptButton.hidden = true //FIX Here
+        //uploadRollButton.hidden = true //FIX HERE
+        
+        // Dismiss UIImagePickerController to go back to your original view controller
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+
 
 }
