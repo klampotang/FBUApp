@@ -8,6 +8,13 @@
 
 import UIKit
 
+enum Swipe {
+    case Left
+    case Right
+    case Up
+    case Down
+}
+
 class MainView: UIView {
     let imageMarginSpace: CGFloat = 3.0
     var pictureView: UIImageView!
@@ -21,6 +28,7 @@ class MainView: UIView {
         self.center = center
         self.originalCenter = center
         animator = UIDynamicAnimator(referenceView: self)
+        
         self.pictureView.frame = CGRectIntegral(CGRectMake(
             0.0 + self.imageMarginSpace,
             0.0 + self.imageMarginSpace,
@@ -36,20 +44,45 @@ class MainView: UIView {
         super.init(coder: aDecoder)
     }
     
-    func swipe(answer: Bool) {
+    func swipe(swipe: Swipe) {
         animator.removeAllBehaviors()
         
         // If the answer is false, Move to the left
         // Else if the answer is true, move to the right
-        let gravityX = answer ? 0.5 : -0.5
-        let magnitude = answer ? 20.0 : -20.0
-        let gravityBehavior:UIGravityBehavior = UIGravityBehavior(items: [self])
-        gravityBehavior.gravityDirection = CGVectorMake(CGFloat(gravityX), 0)
-        animator.addBehavior(gravityBehavior)
+        var gravityX = 0.0
+        var gravityY = 0.0
+        if swipe == Swipe.Left {
+            gravityX = -0.5
+        }
+        else if swipe == Swipe.Right {
+            gravityX = 0.5
+        }
+        else if swipe == Swipe.Down {
+            gravityY = 0.5
+        }
         
+        //let gravityX = answer ? 0.5 : -0.5
+        var magnitude = 0.0
+        if swipe == Swipe.Left {
+            magnitude = -20.0
+        }
+        else if swipe == Swipe.Right {
+            magnitude = 20.0
+        }
+        else if swipe == Swipe.Down {
+            magnitude = 20.0
+        }
+        //let magnitude = answer ? 20.0 : -20.0
+        let gravityBehavior:UIGravityBehavior = UIGravityBehavior(items: [self])
+        print(swipe)
+        print(gravityX)
+        print(gravityY)
+        //gravityBehavior.gravityDirection = CGVectorMake(CGFloat(gravityX), CGFloat(gravityY))
+        animator.addBehavior(gravityBehavior)
+        /*
         let pushBehavior:UIPushBehavior = UIPushBehavior(items: [self], mode: UIPushBehaviorMode.Instantaneous)
         pushBehavior.magnitude = CGFloat(magnitude)
-        animator.addBehavior(pushBehavior)
+        animator.addBehavior(pushBehavior)*/
         
     }
     

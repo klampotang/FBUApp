@@ -11,9 +11,16 @@
 
 
 import UIKit
+/*
+enum Swipe {
+    case Left
+    case Right
+    case Up
+    case Down
+}*/
 
 class MainViewController: UIViewController {
-    var images: [UIImage] = [UIImage(named: "demo1")!, UIImage(named: "demo2")!, UIImage(named: "demo3")!]
+    var images: [UIImage] = [UIImage(named: "demo1")!, UIImage(named: "demo2")!, UIImage(named: "demo3")!, UIImage(named: "demo4")!, UIImage(named: "demo5")!, UIImage(named: "demo6")!, UIImage(named: "demo7")!, UIImage(named: "demo8")!]
     var centerXFactor: CGFloat = 2.0
     var centerYFactor: CGFloat = 2.5
     var frameXFactor: CGFloat = 40
@@ -56,9 +63,9 @@ class MainViewController: UIViewController {
     }
     
     
-    func determineJudgement(answer: Bool) {
+    func determineJudgement(swipe: Swipe) {
         // Run the swipe animation
-        self.currentMainView.swipe(answer)
+        self.currentMainView.swipe(swipe)
         
         // Handle when we have no more matches
         self.mainViews.removeAtIndex(self.mainViews.count - 1)
@@ -85,10 +92,19 @@ class MainViewController: UIViewController {
             // Determine if we need to swipe off or return to center
             let location = gesture.locationInView(self.view)
             if self.currentMainView.center.x / self.view.bounds.maxX > 0.8 {
-                self.determineJudgement(true)
+                print("swipe right")
+                self.determineJudgement(.Right)
+                
             }
             else if self.currentMainView.center.x / self.view.bounds.maxX < 0.2 {
-                self.determineJudgement(false)
+                print("swipe left")
+                self.determineJudgement(.Left)
+                
+            }
+            else if self.currentMainView.center.y / self.view.bounds.maxY > 0.8 {
+                print("swipe down")
+                self.determineJudgement(.Down)
+                
             }
             else {
                 self.currentMainView.returnToCenter()
