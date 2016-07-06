@@ -21,6 +21,10 @@ enum Swipe {
 
 class MainViewController: UIViewController {
     var images: [UIImage] = [UIImage(named: "demo1")!, UIImage(named: "demo2")!, UIImage(named: "demo3")!, UIImage(named: "demo4")!, UIImage(named: "demo5")!, UIImage(named: "demo6")!, UIImage(named: "demo7")!, UIImage(named: "demo8")!]
+    
+    var cards: [Card] = []
+    var saved: [Card] = []
+    
     var centerXFactor: CGFloat = 2.0
     var centerYFactor: CGFloat = 2.5
     var frameXFactor: CGFloat = 10
@@ -28,8 +32,6 @@ class MainViewController: UIViewController {
     
     var currentMainView: MainView!
     var mainViews: [MainView] = []
-    var saved: [Card] = []
-    
     
     @IBAction func onX(sender: AnyObject) {
     }
