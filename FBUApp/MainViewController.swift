@@ -24,9 +24,10 @@ enum Swipe {
 class MainViewController: UIViewController {
     var images: [UIImage] = [UIImage(named: "demo1")!, UIImage(named: "demo2")!, UIImage(named: "demo3")!, UIImage(named: "demo4")!, UIImage(named: "demo5")!, UIImage(named: "demo6")!, UIImage(named: "demo7")!, UIImage(named: "demo8")!]
     
-    @IBOutlet weak var pictureView: PFImageView!
-    var cards: [PFObject] = []
+    
+    var cards: [PFObject]?
     var saved: [PFObject] = []
+    @IBOutlet weak var pictureView: UIImageView!
     
     var centerXFactor: CGFloat = 2.0
     var centerYFactor: CGFloat = 2.5
@@ -53,13 +54,24 @@ class MainViewController: UIViewController {
         
         
         loadCards()
-        
-        for card in cards {
+        //print("cards count = \(cards!.count)")
+        /*for card in cards! {
+            print("for loop")
             let imageFile = card["media"] as! PFFile
+            var image = UIImage()
+            imageFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) in
+                if imageData != nil {
+                    image = UIImage(data: imageData!)!
+                    
+                }
+                else {
+                    print(error)
+                }
+            }
             currentMainView = MainView(
                 frame: CGRectMake(0, 0, self.view.frame.width - frameXFactor, self.view.frame.width - frameYFactor),
                 center: CGPoint(x: self.view.bounds.width / centerXFactor, y: self.view.bounds.height / centerYFactor),
-                file: imageFile)
+                image: image)
             self.mainViews.append(currentMainView)
         }
         
@@ -69,7 +81,41 @@ class MainViewController: UIViewController {
         
         let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         self.view.addGestureRecognizer(pan)
+        print(self.mainViews.count)*/
     }
+    /*
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loadCards()
+        
+        for card in cards {
+            let imageFile = card["media"] as! PFFile
+            var image = UIImage()
+            imageFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) in
+                if imageData != nil {
+                    image = UIImage(data: imageData!)!
+                    
+                }
+                else {
+                    print(error)
+                }
+            }
+            currentMainView = MainView(
+                frame: CGRectMake(0, 0, self.view.frame.width - frameXFactor, self.view.frame.width - frameYFactor),
+                center: CGPoint(x: self.view.bounds.width / centerXFactor, y: self.view.bounds.height / centerYFactor),
+                image: image)
+            self.mainViews.append(currentMainView)
+        }
+        
+        for mainView in mainViews {
+            self.view.addSubview(mainView)
+        }
+        
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+        self.view.addGestureRecognizer(pan)
+
+    }*/
     
     func loadCards() {
         let query = PFQuery(className: "Card")
@@ -85,10 +131,42 @@ class MainViewController: UIViewController {
                 print("did not successfully get pics")
             }
             else {
+                print("cards")
+                self.cards = []
                 self.cards = cards!
                 //self.isMoreDataLoading = false
                 //MBProgressHUD.hideHUDForView(self.view, animated: true)
                 //refresh.endRefreshing()
+                
+                for card in cards! {
+                    let imageFile = card["media"] as! PFFile
+                    var image = UIImage()
+                    imageFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) in
+                        if imageData != nil {
+                            image = UIImage(data: imageData!)!
+                            self.currentMainView = MainView(
+                                frame: CGRectMake(0, 0, self.view.frame.width - self.frameXFactor, self.view.frame.width - self.frameYFactor),
+                                center: CGPoint(x: self.view.bounds.width / self.centerXFactor, y: self.view.bounds.height / self.centerYFactor),
+                                image: image)
+                            self.mainViews.append(self.currentMainView)
+                            print("first mainviews count \(self.mainViews.count)")
+                            self.view.addSubview(self.currentMainView)
+                            
+                        }
+                        else {
+                            print(error)
+                        }
+                    }
+                    
+                }
+                /*
+                for mainView in self.mainViews {
+                    self.view.addSubview(mainView)
+                }*/
+                
+                let pan = UIPanGestureRecognizer(target: self, action: #selector(self.handlePan(_:)))
+                self.view.addGestureRecognizer(pan)
+                print("mainviews count \(self.mainViews.count)")
                 
             }
         }
@@ -101,19 +179,20 @@ class MainViewController: UIViewController {
         self.currentMainView.swipe(swipe)
         
         // Handle when we have no more matches
+        print(self.mainViews.count)
         self.mainViews.removeAtIndex(self.mainViews.count - 1)
-        /*
+        
         if self.mainViews.count - 1 < 0 {
             let noMoreView = MainView(
                 frame: CGRectMake(0, 0, self.view.frame.width - frameXFactor, self.view.frame.width - frameYFactor),
                 center: CGPoint(x: self.view.bounds.width / centerXFactor, y: self.view.bounds.height / centerYFactor),
-                file: nil
+                image: UIImage()
             )
             self.mainViews.append(noMoreView)
             self.view.addSubview(noMoreView)
             //self.done = true
             return
-        }*/
+        }
         
         // Set the new current question to the next one
         self.currentMainView = self.mainViews.last!

@@ -206,7 +206,10 @@
                                     <segue destination="Unf-ML-Mzm" kind="show" id="QcO-4v-7ml"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lXh-os-NOk" customClass="PFImageView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lXh-os-NOk">
+                                <rect key="frame" x="38" y="145" width="298" height="259"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xXm-Ei-vYn">
                                 <rect key="frame" x="38" y="145" width="298" height="259"/>
                             </imageView>
                         </subviews>
@@ -226,7 +229,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="pictureView" destination="lXh-os-NOk" id="iUg-Lv-kH8"/>
+                        <outlet property="pictureView" destination="xXm-Ei-vYn" id="4BH-E1-vxj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8K6-1h-k0U" userLabel="First Responder" sceneMemberID="firstResponder"/>

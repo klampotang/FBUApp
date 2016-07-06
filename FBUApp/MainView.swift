@@ -19,14 +19,17 @@ enum Swipe {
 
 class MainView: UIView {
     let imageMarginSpace: CGFloat = 3.0
-    var pictureView: PFImageView!
+    //var pictureView: PFImageView!
+    var pictureView: UIImageView!
     var originalCenter: CGPoint!
     var animator: UIDynamicAnimator!
     
-    init(frame: CGRect, center: CGPoint, file: PFFile) {
-        self.pictureView = PFImageView()
-        self.pictureView.file = file
-        self.pictureView.loadInBackground()
+    init(frame: CGRect, center: CGPoint, image: UIImage) {
+        //self.pictureView = PFImageView()
+        //self.pictureView.file = file
+        //self.pictureView.loadInBackground()
+        self.pictureView = UIImageView()
+        self.pictureView.image = image
         super.init(frame: frame)
         self.center = center
         self.originalCenter = center
