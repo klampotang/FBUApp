@@ -164,9 +164,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lXh-os-NOk">
-                                <rect key="frame" x="38" y="145" width="298" height="259"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdm-P2-sxH">
                                 <rect key="frame" x="71" y="546" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -209,6 +206,9 @@
                                     <segue destination="Unf-ML-Mzm" kind="show" id="QcO-4v-7ml"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lXh-os-NOk" customClass="PFImageView">
+                                <rect key="frame" x="38" y="145" width="298" height="259"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -225,6 +225,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="pictureView" destination="lXh-os-NOk" id="iUg-Lv-kH8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8K6-1h-k0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

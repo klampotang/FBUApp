@@ -11,6 +11,8 @@
 
 
 import UIKit
+import Parse
+import ParseUI
 /*
 enum Swipe {
     case Left
@@ -22,8 +24,9 @@ enum Swipe {
 class MainViewController: UIViewController {
     var images: [UIImage] = [UIImage(named: "demo1")!, UIImage(named: "demo2")!, UIImage(named: "demo3")!, UIImage(named: "demo4")!, UIImage(named: "demo5")!, UIImage(named: "demo6")!, UIImage(named: "demo7")!, UIImage(named: "demo8")!]
     
-    var cards: [Card] = []
-    var saved: [Card] = []
+    @IBOutlet weak var pictureView: PFImageView!
+    var cards: [PFObject] = []
+    var saved: [PFObject] = []
     
     var centerXFactor: CGFloat = 2.0
     var centerYFactor: CGFloat = 2.5
@@ -48,11 +51,15 @@ class MainViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        for image in images {
+        
+        loadCards()
+        
+        for card in cards {
+            let imageFile = card["media"] as! PFFile
             currentMainView = MainView(
                 frame: CGRectMake(0, 0, self.view.frame.width - frameXFactor, self.view.frame.width - frameYFactor),
                 center: CGPoint(x: self.view.bounds.width / centerXFactor, y: self.view.bounds.height / centerYFactor),
-                image: image)
+                file: imageFile)
             self.mainViews.append(currentMainView)
         }
         
@@ -64,6 +71,30 @@ class MainViewController: UIViewController {
         self.view.addGestureRecognizer(pan)
     }
     
+    func loadCards() {
+        let query = PFQuery(className: "Card")
+        query.orderByDescending("createdAt")
+        query.includeKey("author")
+        /*
+        if firstLoad {
+            MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        }*/
+        query.findObjectsInBackgroundWithBlock { (cards: [PFObject]?, error: NSError?) in
+            if error != nil {
+                print(error)
+                print("did not successfully get pics")
+            }
+            else {
+                self.cards = cards!
+                //self.isMoreDataLoading = false
+                //MBProgressHUD.hideHUDForView(self.view, animated: true)
+                //refresh.endRefreshing()
+                
+            }
+        }
+
+    }
+    
     
     func determineJudgement(swipe: Swipe) {
         // Run the swipe animation
@@ -71,17 +102,18 @@ class MainViewController: UIViewController {
         
         // Handle when we have no more matches
         self.mainViews.removeAtIndex(self.mainViews.count - 1)
+        /*
         if self.mainViews.count - 1 < 0 {
             let noMoreView = MainView(
                 frame: CGRectMake(0, 0, self.view.frame.width - frameXFactor, self.view.frame.width - frameYFactor),
                 center: CGPoint(x: self.view.bounds.width / centerXFactor, y: self.view.bounds.height / centerYFactor),
-                image: UIImage()
+                file: nil
             )
             self.mainViews.append(noMoreView)
             self.view.addSubview(noMoreView)
             //self.done = true
             return
-        }
+        }*/
         
         // Set the new current question to the next one
         self.currentMainView = self.mainViews.last!

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 enum Swipe {
     case Left
@@ -17,13 +19,14 @@ enum Swipe {
 
 class MainView: UIView {
     let imageMarginSpace: CGFloat = 3.0
-    var pictureView: UIImageView!
+    var pictureView: PFImageView!
     var originalCenter: CGPoint!
     var animator: UIDynamicAnimator!
     
-    init(frame: CGRect, center: CGPoint, image: UIImage) {
-        self.pictureView = UIImageView()
-        self.pictureView.image = image
+    init(frame: CGRect, center: CGPoint, file: PFFile) {
+        self.pictureView = PFImageView()
+        self.pictureView.file = file
+        self.pictureView.loadInBackground()
         super.init(frame: frame)
         self.center = center
         self.originalCenter = center
