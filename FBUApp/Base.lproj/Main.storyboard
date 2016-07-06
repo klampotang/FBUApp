@@ -155,7 +155,7 @@
                         <viewControllerLayoutGuide type="top" id="4LG-ZB-5sm"/>
                         <viewControllerLayoutGuide type="bottom" id="rzt-3e-cgb"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="B85-zr-GeU">
+                    <view key="view" contentMode="scaleToFill" id="B85-zr-GeU" customClass="MainView" customModule="FBUApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
