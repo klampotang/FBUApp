@@ -79,15 +79,15 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         {
             // Hide HUD once the network request comes back (must be done on main UI thread)
             //MBProgressHUD.hideHUDForView(self.view, animated: true)
-            self.alert("Success")
+            
             uploadImageView.hidden = true
-            
-            
             buttonLibraryTapped.hidden  = false
             buttonPromptCam.hidden = false
             locationTextField.text = ""
             
             self.dismissViewControllerAnimated(true, completion: nil)
+            
+            self.alert("Success")
         }
         else
         {
