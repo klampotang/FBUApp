@@ -23,6 +23,7 @@
 		A138D0041B23FB800149B814 /* Pods_FBUApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B9C629BF0DD91A19220201 /* Pods_FBUApp.framework */; };
 		AF42BD4C1D2D5A6000554512 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42BD4B1D2D5A6000554512 /* MainView.swift */; };
 		EDF427DC1D2D7DAA0075DFC3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF427DB1D2D7DAA0075DFC3 /* User.swift */; };
+		EDF427DE1D2D85090075DFC3 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF427DD1D2D85090075DFC3 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		AF42BD4B1D2D5A6000554512 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C5B9C629BF0DD91A19220201 /* Pods_FBUApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBUApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF427DB1D2D7DAA0075DFC3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EDF427DD1D2D85090075DFC3 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				EDF427DB1D2D7DAA0075DFC3 /* User.swift */,
+				EDF427DD1D2D85090075DFC3 /* Card.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				881F34751D2C4DE8000C8049 /* WelcomeViewController.swift in Sources */,
 				881F347D1D2C4E21000C8049 /* UploadViewController.swift in Sources */,
 				881F34641D2C4A83000C8049 /* ViewController.swift in Sources */,
+				EDF427DE1D2D85090075DFC3 /* Card.swift in Sources */,
 				881F34771D2C4E05000C8049 /* SignUpViewController.swift in Sources */,
 				881F347B1D2C4E1A000C8049 /* MainViewController.swift in Sources */,
 				881F34831D2C5457000C8049 /* AccountViewController.swift in Sources */,
