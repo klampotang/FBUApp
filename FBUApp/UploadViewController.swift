@@ -68,6 +68,8 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         //MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         let locationText = locationTextField.text;
         print(locationText)
+        
+        let priceValue = priceSegControl.selectedSegmentIndex
         //newimage = resize(newimage!, newSize: CGSize)
         let successValue = Card.cardImage(newImage, withLocation: locationText)
         if(successValue)
