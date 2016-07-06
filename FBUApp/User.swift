@@ -7,8 +7,9 @@
 // User model
 
 import UIKit
+import Parse
 
-class User: NSObject {
+class User: PFUser {
     var firstName: String?
     var lastName: String?
     var userName: String?
@@ -17,6 +18,7 @@ class User: NSObject {
 
     
     init(dictionary: NSDictionary) {
+        super.init()
         self.dictionary = dictionary
         firstName = dictionary["firstName"] as? String
         lastName = dictionary["lastName"] as? String
