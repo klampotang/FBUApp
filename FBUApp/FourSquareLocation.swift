@@ -20,7 +20,7 @@ class FourSquareClient: NSObject {
         
     }
     
-    func fetchLocations(query: String, near: String = "San Francisco") {
+    func fetchLocations(query: String, near: String = "San Francisco") -> [NSArray] {
         let baseUrlString = "https://api.foursquare.com/v2/venues/search?"
         let queryString = "client_id=\(CLIENT_ID)&client_secret=\(CLIENT_SECRET)&v=20141020&near=\(near),CA&query=\(query)"
         
@@ -42,7 +42,9 @@ class FourSquareClient: NSObject {
                 }
             }
         });
+       
         task.resume()
+        return results as! [NSArray]
 
 
         }
