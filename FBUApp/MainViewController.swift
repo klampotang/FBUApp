@@ -28,6 +28,8 @@ class MainViewController: UIViewController {
     var cards: [PFObject]?
     var saved: [PFObject] = []
     @IBOutlet weak var pictureView: UIImageView!
+    @IBOutlet weak var likeLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
     
     var centerXFactor: CGFloat = 2.0
     var centerYFactor: CGFloat = 2.5
@@ -37,8 +39,7 @@ class MainViewController: UIViewController {
     var currentMainView: MainView!
     var mainViews: [MainView] = []
     
-    @IBOutlet weak var likeLabel: UILabel!
-    @IBOutlet weak var distanceLabel: UILabel!
+    
     @IBAction func onX(sender: AnyObject) {
         self.determineJudgement(.Left)
     }
@@ -131,6 +132,29 @@ class MainViewController: UIViewController {
             }
             
             
+        }
+        
+        else if swipe == .Right {
+
+            let currentCard = self.currentMainView.currentCard
+            currentCard.fetchIfNeededInBackgroundWithBlock({ (currentCard: PFObject?, error: NSError?) in
+                if error != nil {
+                    print(error)
+                }
+                else {
+                    var likes = currentCard!["likesCount"] as! Int
+                    likes += 1
+                    currentCard!["likesCount"] = likes
+                    currentCard?.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) in
+                        if success {
+                            print("likes count incremented")
+                        }
+                        else {
+                            print(error)
+                        }
+                    })
+                }
+            })
         }
         print("saved count \(self.saved.count)")
         

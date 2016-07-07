@@ -21,19 +21,30 @@ class MainView: UIView {
     let imageMarginSpace: CGFloat = 3.0
     //var pictureView: PFImageView!
     var pictureView: UIImageView!
+    var likeLabel: UILabel!
+    var distanceLabel: UILabel!
     var originalCenter: CGPoint!
     var animator: UIDynamicAnimator!
     var currentCard: PFObject!
     
     //init(frame: CGRect, center: CGPoint, image: UIImage) {
     init(frame: CGRect, center: CGPoint, card: PFObject) {
+        super.init(frame: frame)
+        
         //self.pictureView = PFImageView()
         //self.pictureView.file = file
         //self.pictureView.loadInBackground()
         self.currentCard = card
         self.pictureView = UIImageView()
         //self.pictureView.image = image
-        super.init(frame: frame)
+        let likes = card["likesCount"] as! Int
+        if likes == 1 {
+            self.likeLabel.text = "\(likes) like"
+        }
+        else {
+            self.likeLabel.text = "\(likes) likes"
+        }
+        
         let imageFile = card["media"] as! PFFile
         var image = UIImage()
         imageFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) in
