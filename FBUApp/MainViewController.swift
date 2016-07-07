@@ -28,7 +28,8 @@ class MainViewController: UIViewController {
     var cards: [PFObject]?
     var saved: [PFObject] = []
     @IBOutlet weak var pictureView: UIImageView!
-    @IBOutlet weak var likeLabel: UILabel!
+    
+    @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     
     var centerXFactor: CGFloat = 2.0

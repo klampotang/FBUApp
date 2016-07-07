@@ -215,6 +215,12 @@
                                     <action selector="onSave:" destination="vHC-0F-DAi" eventType="touchUpInside" id="7ZU-te-nDr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NrY-x6-lzH">
+                                <rect key="frame" x="283" y="441" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -233,7 +239,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="distanceLabel" destination="Anj-nB-5BH" id="BAP-z6-ykZ"/>
-                        <outlet property="likeLabel" destination="dWN-5y-Sej" id="BQm-Fc-ikk"/>
+                        <outlet property="likesLabel" destination="NrY-x6-lzH" id="fpv-uQ-ipl"/>
                         <outlet property="pictureView" destination="xXm-Ei-vYn" id="4BH-E1-vxj"/>
                     </connections>
                 </viewController>
@@ -368,7 +374,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rJA-bU-lzh">
-                                <rect key="frame" x="20" y="86" width="89" height="75"/>
+                                <rect key="frame" x="20" y="86" width="87" height="87"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yI6-a8-2PZ">
                                 <rect key="frame" x="129" y="86" width="45" height="21"/>
@@ -456,6 +462,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="adressLabel" destination="1Sh-Ml-fAK" id="hBm-dw-AWp"/>
+                        <outlet property="cardPicture" destination="rJA-bU-lzh" id="ww9-E4-Iwu"/>
+                        <outlet property="distanceLabel" destination="N8x-4z-okG" id="g86-HS-fxz"/>
+                        <outlet property="estimatedPriceLabel" destination="eeP-NW-WDu" id="uWv-bN-UfP"/>
+                        <outlet property="friendsCollectionView" destination="Ghd-By-ScT" id="P5K-ef-5Bb"/>
+                        <outlet property="hoursLabel" destination="6gS-dN-nJ5" id="W7o-nN-y4t"/>
+                        <outlet property="nameLabel" destination="yI6-a8-2PZ" id="do1-wK-6ZK"/>
+                        <outlet property="tipsLabel" destination="tKe-TD-WrN" id="jNC-en-Ghy"/>
+                        <outlet property="whenSavedLabel" destination="Er5-cx-c2B" id="2Ki-0l-Qv8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ch-E2-Scf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

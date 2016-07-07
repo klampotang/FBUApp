@@ -10,6 +10,15 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var estimatedPriceLabel: UILabel!
+    @IBOutlet weak var tipsLabel: UILabel!
+    @IBOutlet weak var friendsCollectionView: UICollectionView!
+    @IBOutlet weak var hoursLabel: UILabel!
+    @IBOutlet weak var whenSavedLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var adressLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var cardPicture: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
