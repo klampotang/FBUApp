@@ -28,6 +28,7 @@ class DetailViewController: UIViewController {
         self.distanceLabel.text = String(card!["distance"])
         self.cardPicture.file = card!["media"] as? PFFile
         self.cardPicture.loadInBackground()
+        self.estimatedPriceLabel.text = String(card!["price"])
 
         // Do any additional setup after loading the view.
     }
