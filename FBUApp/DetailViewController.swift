@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import ParseUI
 class DetailViewController: UIViewController {
     //derp
     
@@ -21,10 +22,12 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var adressLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var cardPicture: UIImageView!
+    @IBOutlet weak var cardPicture: PFImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.distanceLabel.text = String(card!["distance"])
+        self.cardPicture.file = card!["media"] as? PFFile
+        self.cardPicture.loadInBackground()
 
         // Do any additional setup after loading the view.
     }
