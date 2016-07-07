@@ -17,6 +17,7 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var locationSearchBar: UISearchBar!
+    
     let CLIENT_ID = "VM3U2MOM4P4IOVBQMZW5NSQH1MJEANGW51YA4SVMW4JLAEBH"
     let CLIENT_SECRET = "5FHY2RUJVEW2YRHJ3J53XN5J0U2HUY5KNQMFSCHJVMQPMDUC"
     weak var delegate : LocationsViewControllerDelegate!
