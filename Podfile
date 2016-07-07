@@ -10,4 +10,5 @@ target 'FBUApp' do
     pod 'Parse'
     pod 'ParseUI'
     pod 'MBProgressHUD'
+    pod 'AFNetworking'
 end
