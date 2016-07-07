@@ -28,8 +28,6 @@ class SavedViewController: UIViewController, UICollectionViewDelegate, UICollect
     func cardForIndexPath(indexPath: NSIndexPath, cell: SavedCell) -> UIImage {
         
         let save = saved![indexPath.row]
-        //let post = posts![indexPath.row]
-        //let imageFile = post["media"] as! PFFile
         //let imageFile = save["media"] as! PFFile
         let image = UIImage()
         /*
