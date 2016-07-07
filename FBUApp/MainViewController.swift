@@ -22,9 +22,6 @@ enum Swipe {
 }*/
 
 class MainViewController: UIViewController {
-    var images: [UIImage] = [UIImage(named: "demo1")!, UIImage(named: "demo2")!, UIImage(named: "demo3")!, UIImage(named: "demo4")!, UIImage(named: "demo5")!, UIImage(named: "demo6")!, UIImage(named: "demo7")!, UIImage(named: "demo8")!]
-    
-    
     var cards: [PFObject]?
     var saved: [PFObject] = []
     @IBOutlet weak var pictureView: UIImageView!
@@ -114,7 +111,6 @@ class MainViewController: UIViewController {
         self.currentMainView.swipe(swipe)
         
         if swipe == .Down {
-            //saved.append(self.currentMainView.currentCard)
             let user = PFUser.currentUser()
             if let userSaved = user!["saved"] as? [PFObject] {
                 print("user saved \(userSaved.count)")
@@ -187,7 +183,7 @@ class MainViewController: UIViewController {
         // Is this gesture state finished??
         if gesture.state == UIGestureRecognizerState.Ended {
             // Determine if we need to swipe off or return to center
-            //let location = gesture.locationInView(self.view)
+            
             if self.currentMainView.center.x / self.view.bounds.maxX > 0.6 {
                 self.determineJudgement(.Right)
                 
