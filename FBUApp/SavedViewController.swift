@@ -19,6 +19,7 @@ class SavedViewController: UIViewController, UICollectionViewDelegate, UICollect
         super.viewDidLoad()
         let user = PFUser.currentUser()
         saved = user!["saved"] as? [PFObject]
+        
         collectionView.delegate = self
         collectionView.dataSource = self
 
@@ -26,20 +27,45 @@ class SavedViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func cardForIndexPath(indexPath: NSIndexPath, cell: SavedCell) -> UIImage {
-        
+        var image = UIImage()
         let save = saved![indexPath.row]
-        //let imageFile = save["media"] as! PFFile
-        let image = UIImage()
-        /*
-        imageFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) in
-            if imageData != nil {
-                cell.pictureView.image = UIImage(data: imageData!)!
-            }
-            else {
+        let query = PFQuery(className: "Card")
+        query.orderByDescending("createdAt")
+        save.fetchIfNeededInBackgroundWithBlock { (save: PFObject?, error: NSError?) in
+            if error != nil {
                 print(error)
             }
-        }*/
-        return image
+            else {
+                print(save!.createdAt)
+                query.whereKey("createdAt", equalTo: save!.createdAt!)
+                query.findObjectsInBackgroundWithBlock { (saves: [PFObject]?, error: NSError?) in
+                    if error != nil {
+                        print(error)
+                    }
+                    else {
+                        print("saved count \(saves!.count)")
+                        let save = saves![0]
+                        let imageFile = save["media"] as! PFFile
+                        
+                        imageFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) in
+                            if imageData != nil {
+                                image = UIImage(data: imageData!)!
+                                cell.pictureView.image = image
+                                
+                            }
+                            else {
+                                print(error)
+                                
+                            }
+                        }
+                        
+                    }
+                }
+            }
+            
+        }
+        
+       return image
         
     }
     
