@@ -71,7 +71,6 @@ class MainViewController: UIViewController {
             }
             else {
                 print("cards")
-                //self.cards = []
                 self.cards = cards!
                 //self.isMoreDataLoading = false
                 //MBProgressHUD.hideHUDForView(self.view, animated: true)
