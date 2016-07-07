@@ -88,6 +88,8 @@ class MainViewController: UIViewController {
                     self.mainViews.append(self.currentMainView)
                     //print("first mainviews count \(self.mainViews.count)")
                     self.view.addSubview(self.currentMainView)
+                    let currentCard = self.currentMainView.currentCard
+                    self.likesLabel.text = "\(currentCard["likesCount"]) likes"
                     //self.likesLabel.text = String(card["likesCount"])
                     //self.distanceLabel.text = String(card["location"])
                     
@@ -176,6 +178,8 @@ class MainViewController: UIViewController {
         
         // Set the new current question to the next one
         self.currentMainView = self.mainViews.last!
+        let currentCard = self.currentMainView.currentCard
+        self.likesLabel.text = "\(currentCard["likesCount"]) likes"
         
     }
     
