@@ -12,9 +12,10 @@ import Parse
 class User: PFUser {
     var firstName: String?
     var lastName: String?
-    var userName: String?
-    var dictionary: NSDictionary?
+    //var userName: String?
+    var dictionary: NSDictionary!
     var age: Int = 0
+    var saved: [PFObject]?
 
     
     init(dictionary: NSDictionary) {
@@ -22,8 +23,15 @@ class User: PFUser {
         self.dictionary = dictionary
         firstName = dictionary["firstName"] as? String
         lastName = dictionary["lastName"] as? String
-        userName = dictionary["username"] as? String
+        //userName = dictionary["username"] as? String
         age = (dictionary["age"] as? Int) ?? 0
+        saved = []
+    }
+    
+    var userName: NSString {
+        get {
+            return (dictionary["username"] as? String)!
+        }
     }
     
 

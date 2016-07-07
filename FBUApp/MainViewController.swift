@@ -38,13 +38,15 @@ class MainViewController: UIViewController {
     var mainViews: [MainView] = []
     
     @IBAction func onX(sender: AnyObject) {
+        self.determineJudgement(.Left)
     }
     
     @IBAction func onLove(sender: AnyObject) {
+        self.determineJudgement(.Right)
     }
     
     @IBAction func onSave(sender: AnyObject) {
-        
+        self.determineJudgement(.Down)
     }
     
     override func viewDidLoad() {
@@ -68,7 +70,7 @@ class MainViewController: UIViewController {
             }
             else {
                 print("cards")
-                self.cards = []
+                //self.cards = []
                 self.cards = cards!
                 //self.isMoreDataLoading = false
                 //MBProgressHUD.hideHUDForView(self.view, animated: true)
@@ -80,7 +82,7 @@ class MainViewController: UIViewController {
                         center: CGPoint(x: self.view.bounds.width / self.centerXFactor, y: self.view.bounds.height / self.centerYFactor),
                         card: card)
                     self.mainViews.append(self.currentMainView)
-                    print("first mainviews count \(self.mainViews.count)")
+                    //print("first mainviews count \(self.mainViews.count)")
                     self.view.addSubview(self.currentMainView)
                     
                 }
@@ -91,7 +93,7 @@ class MainViewController: UIViewController {
                 
                 let pan = UIPanGestureRecognizer(target: self, action: #selector(self.handlePan(_:)))
                 self.view.addGestureRecognizer(pan)
-                print("mainviews count \(self.mainViews.count)")
+                //print("mainviews count \(self.mainViews.count)")
                 
             }
         }
@@ -104,7 +106,7 @@ class MainViewController: UIViewController {
         self.currentMainView.swipe(swipe)
         
         if swipe == .Down {
-            self.saved.append(self.currentMainView.currentCard)
+            saved.append(self.currentMainView.currentCard)
         }
         print("saved count \(self.saved.count)")
         
@@ -134,17 +136,14 @@ class MainViewController: UIViewController {
             // Determine if we need to swipe off or return to center
             //let location = gesture.locationInView(self.view)
             if self.currentMainView.center.x / self.view.bounds.maxX > 0.6 {
-                print("swipe right")
                 self.determineJudgement(.Right)
                 
             }
             else if self.currentMainView.center.x / self.view.bounds.maxX < 0.4 {
-                print("swipe left")
                 self.determineJudgement(.Left)
                 
             }
             else if self.currentMainView.center.y / self.view.bounds.maxY > 0.5 {
-                print("swipe down")
                 self.determineJudgement(.Down)
                 
             }
