@@ -106,7 +106,27 @@ class MainViewController: UIViewController {
         self.currentMainView.swipe(swipe)
         
         if swipe == .Down {
-            saved.append(self.currentMainView.currentCard)
+            //saved.append(self.currentMainView.currentCard)
+            let user = PFUser.currentUser()
+            if let userSaved = user!["saved"] as? [PFObject] {
+                print("user saved \(userSaved.count)")
+                var savedCards = userSaved
+                savedCards.append(self.currentMainView.currentCard)
+                user!["saved"] = savedCards
+                user?.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) in
+                    if success {
+                        print("saved")
+                    }
+                    else {
+                        print("not saved")
+                    }
+                })
+            }
+            else {
+                print("no saved")
+            }
+            
+            
         }
         print("saved count \(self.saved.count)")
         

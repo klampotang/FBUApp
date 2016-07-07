@@ -266,7 +266,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="C6d-9v-V2R">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SavedCell" reuseIdentifier="SavedCell" id="C6d-9v-V2R" customClass="SavedCell" customModule="FBUApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="131" height="131"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -280,6 +280,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
+                                            <outlet property="pictureView" destination="Usp-Rb-pzn" id="UoT-fS-Tin"/>
                                             <segue destination="7e5-gW-M0c" kind="show" id="vVJ-WM-0Ta"/>
                                         </connections>
                                     </collectionViewCell>
@@ -289,6 +290,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Ptp-b6-iMB" id="AE2-ot-1GV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PSP-HU-Cps" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

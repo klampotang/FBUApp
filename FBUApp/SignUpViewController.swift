@@ -49,8 +49,12 @@ class SignUpViewController: UIViewController {
                 currUser!.setObject(self.firstNameTextField.text!, forKey: "firstName")
                 currUser!.setObject(self.lastNameTextField.text!, forKey: "lastName")
                 currUser!.setObject(self.ageTextField.text!, forKey: "age")
+                let empty: [PFObject] = []
+                currUser!.setObject(empty, forKey: "saved")
                 let firstNameCurrUser = currUser?["firstName"] as! String
                 print(firstNameCurrUser)
+                let saved = currUser?["saved"] as! [PFObject]
+                print(saved.count)
                 // manually segue to logged in view
                 
             }
