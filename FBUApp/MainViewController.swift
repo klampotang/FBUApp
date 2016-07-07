@@ -51,72 +51,9 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        
         loadCards()
-        //print("cards count = \(cards!.count)")
-        /*for card in cards! {
-            print("for loop")
-            let imageFile = card["media"] as! PFFile
-            var image = UIImage()
-            imageFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) in
-                if imageData != nil {
-                    image = UIImage(data: imageData!)!
-                    
-                }
-                else {
-                    print(error)
-                }
-            }
-            currentMainView = MainView(
-                frame: CGRectMake(0, 0, self.view.frame.width - frameXFactor, self.view.frame.width - frameYFactor),
-                center: CGPoint(x: self.view.bounds.width / centerXFactor, y: self.view.bounds.height / centerYFactor),
-                image: image)
-            self.mainViews.append(currentMainView)
-        }
-        
-        for mainView in mainViews {
-            self.view.addSubview(mainView)
-        }
-        
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
-        self.view.addGestureRecognizer(pan)
-        print(self.mainViews.count)*/
     }
-    /*
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        loadCards()
-        
-        for card in cards {
-            let imageFile = card["media"] as! PFFile
-            var image = UIImage()
-            imageFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) in
-                if imageData != nil {
-                    image = UIImage(data: imageData!)!
-                    
-                }
-                else {
-                    print(error)
-                }
-            }
-            currentMainView = MainView(
-                frame: CGRectMake(0, 0, self.view.frame.width - frameXFactor, self.view.frame.width - frameYFactor),
-                center: CGPoint(x: self.view.bounds.width / centerXFactor, y: self.view.bounds.height / centerYFactor),
-                image: image)
-            self.mainViews.append(currentMainView)
-        }
-        
-        for mainView in mainViews {
-            self.view.addSubview(mainView)
-        }
-        
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
-        self.view.addGestureRecognizer(pan)
 
-    }*/
-    
     func loadCards() {
         let query = PFQuery(className: "Card")
         query.orderByDescending("createdAt")
@@ -138,24 +75,13 @@ class MainViewController: UIViewController {
                 //refresh.endRefreshing()
                 
                 for card in cards! {
-                    let imageFile = card["media"] as! PFFile
-                    var image = UIImage()
-                    imageFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) in
-                        if imageData != nil {
-                            image = UIImage(data: imageData!)!
-                            self.currentMainView = MainView(
-                                frame: CGRectMake(0, 0, self.view.frame.width - self.frameXFactor, self.view.frame.width - self.frameYFactor),
-                                center: CGPoint(x: self.view.bounds.width / self.centerXFactor, y: self.view.bounds.height / self.centerYFactor),
-                                image: image)
-                            self.mainViews.append(self.currentMainView)
-                            print("first mainviews count \(self.mainViews.count)")
-                            self.view.addSubview(self.currentMainView)
-                            
-                        }
-                        else {
-                            print(error)
-                        }
-                    }
+                    self.currentMainView = MainView(
+                        frame: CGRectMake(0, 0, self.view.frame.width - self.frameXFactor, self.view.frame.width - self.frameYFactor),
+                        center: CGPoint(x: self.view.bounds.width / self.centerXFactor, y: self.view.bounds.height / self.centerYFactor),
+                        card: card)
+                    self.mainViews.append(self.currentMainView)
+                    print("first mainviews count \(self.mainViews.count)")
+                    self.view.addSubview(self.currentMainView)
                     
                 }
                 /*
@@ -178,18 +104,18 @@ class MainViewController: UIViewController {
         self.currentMainView.swipe(swipe)
         
         if swipe == .Down {
-
+            self.saved.append(self.currentMainView.currentCard)
         }
+        print("saved count \(self.saved.count)")
         
         // Handle when we have no more matches
-        print(self.mainViews.count)
         self.mainViews.removeAtIndex(self.mainViews.count - 1)
         
         if self.mainViews.count - 1 < 0 {
             let noMoreView = MainView(
                 frame: CGRectMake(0, 0, self.view.frame.width - frameXFactor, self.view.frame.width - frameYFactor),
                 center: CGPoint(x: self.view.bounds.width / centerXFactor, y: self.view.bounds.height / centerYFactor),
-                image: UIImage()
+                card: PFObject()
             )
             self.mainViews.append(noMoreView)
             self.view.addSubview(noMoreView)
@@ -206,7 +132,7 @@ class MainViewController: UIViewController {
         // Is this gesture state finished??
         if gesture.state == UIGestureRecognizerState.Ended {
             // Determine if we need to swipe off or return to center
-            let location = gesture.locationInView(self.view)
+            //let location = gesture.locationInView(self.view)
             if self.currentMainView.center.x / self.view.bounds.maxX > 0.6 {
                 print("swipe right")
                 self.determineJudgement(.Right)

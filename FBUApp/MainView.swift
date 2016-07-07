@@ -23,26 +23,40 @@ class MainView: UIView {
     var pictureView: UIImageView!
     var originalCenter: CGPoint!
     var animator: UIDynamicAnimator!
+    var currentCard: PFObject!
     
-    init(frame: CGRect, center: CGPoint, image: UIImage) {
+    //init(frame: CGRect, center: CGPoint, image: UIImage) {
+    init(frame: CGRect, center: CGPoint, card: PFObject) {
         //self.pictureView = PFImageView()
         //self.pictureView.file = file
         //self.pictureView.loadInBackground()
+        self.currentCard = card
         self.pictureView = UIImageView()
-        self.pictureView.image = image
+        //self.pictureView.image = image
         super.init(frame: frame)
-        self.center = center
-        self.originalCenter = center
-        animator = UIDynamicAnimator(referenceView: self)
+        let imageFile = card["media"] as! PFFile
+        var image = UIImage()
+        imageFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) in
+            if imageData != nil {
+                image = UIImage(data: imageData!)!
+                self.pictureView.image = image
+                
+                self.center = center
+                self.originalCenter = center
+                self.animator = UIDynamicAnimator(referenceView: self)
+                
+                self.pictureView.frame = CGRectIntegral(CGRectMake(
+                    0.0 + self.imageMarginSpace,
+                    0.0 + self.imageMarginSpace,
+                    self.frame.width - (2 * self.imageMarginSpace),
+                    self.frame.height - (2 * self.imageMarginSpace)
+                    ))
+                
+                self.addSubview(self.pictureView)
+            }
+        }
+
         
-        self.pictureView.frame = CGRectIntegral(CGRectMake(
-            0.0 + self.imageMarginSpace,
-            0.0 + self.imageMarginSpace,
-            self.frame.width - (2 * self.imageMarginSpace),
-            self.frame.height - (2 * self.imageMarginSpace)
-            ))
-        
-    self.addSubview(pictureView)
 
     }
     
