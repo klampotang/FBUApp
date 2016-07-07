@@ -9,6 +9,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    //derp
 
     @IBOutlet weak var estimatedPriceLabel: UILabel!
     @IBOutlet weak var tipsLabel: UILabel!
