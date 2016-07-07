@@ -9,24 +9,30 @@
 import UIKit
 import Parse
 
-class SavedViewController: UIViewController {
+class SavedViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pictureView: UIImageView!
+    
+    var saved: [PFObject]?
     override func viewDidLoad() {
         super.viewDidLoad()
+        let user = PFUser.currentUser()
+        saved = user!["saved"] as? [PFObject]
+        collectionView.delegate = self
+        collectionView.dataSource = self
 
         // Do any additional setup after loading the view.
     }
     
-    func postForIndexPath(indexPath: NSIndexPath, cell: SavedCell) -> UIImage {
-        let user = PFUser.currentUser()
-        let saves = user!["saved"] as! [PFObject]
-        let save = saves[indexPath.row]
+    func cardForIndexPath(indexPath: NSIndexPath, cell: SavedCell) -> UIImage {
+        
+        let save = saved![indexPath.row]
         //let post = posts![indexPath.row]
         //let imageFile = post["media"] as! PFFile
-        let imageFile = save["media"] as! PFFile
+        //let imageFile = save["media"] as! PFFile
         let image = UIImage()
+        /*
         imageFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) in
             if imageData != nil {
                 cell.pictureView.image = UIImage(data: imageData!)!
@@ -34,9 +40,19 @@ class SavedViewController: UIViewController {
             else {
                 print(error)
             }
-        }
+        }*/
         return image
         
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return saved?.count ?? 0
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("SavedCell", forIndexPath: indexPath) as! SavedCell
+        cardForIndexPath(indexPath, cell: cell)
+        return cell
     }
 
     override func didReceiveMemoryWarning() {
