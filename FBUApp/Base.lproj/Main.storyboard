@@ -176,13 +176,6 @@
                                     <action selector="onX:" destination="vHC-0F-DAi" eventType="touchUpInside" id="AeI-pr-5cI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D06-2M-0dI">
-                                <rect key="frame" x="158" y="522" width="73" height="55"/>
-                                <state key="normal" image="saveImage"/>
-                                <connections>
-                                    <action selector="onSave:" destination="vHC-0F-DAi" eventType="touchUpInside" id="7ZU-te-nDr"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrw-gs-TPh">
                                 <rect key="frame" x="276" y="524" width="54" height="52"/>
                                 <state key="normal" image="heartImage"/>
@@ -213,6 +206,13 @@
                                 <state key="normal" image="account"/>
                                 <connections>
                                     <segue destination="Unf-ML-Mzm" kind="show" id="QcO-4v-7ml"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D06-2M-0dI">
+                                <rect key="frame" x="157" y="522" width="73" height="55"/>
+                                <state key="normal" image="saveImage"/>
+                                <connections>
+                                    <action selector="onSave:" destination="vHC-0F-DAi" eventType="touchUpInside" id="7ZU-te-nDr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -436,7 +436,7 @@
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.43838900860000002" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <state key="normal" title="Upload from photo library">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="imageViewTapped:" destination="lHt-4G-p2x" eventType="touchUpInside" id="orA-6n-6k3"/>
@@ -469,7 +469,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.30417564660000002" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <state key="normal" title="Upload from Camera Instead">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="uploadFromCamButton:" destination="lHt-4G-p2x" eventType="touchUpInside" id="ON6-f9-BPj"/>

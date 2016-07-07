@@ -128,7 +128,6 @@ class MainViewController: UIViewController {
         query.findObjectsInBackgroundWithBlock { (cards: [PFObject]?, error: NSError?) in
             if error != nil {
                 print(error)
-                print("did not successfully get pics")
             }
             else {
                 print("cards")
