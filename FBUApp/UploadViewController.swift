@@ -9,7 +9,7 @@
 import UIKit
 //import MBProgressHUD
 
-class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, LocationsViewControllerDelegate {
     var newCard: Card?
     var newImage : UIImage?
     
@@ -101,7 +101,16 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
 
     }
-    
+    func locationsPickedLocation(controller: LocationViewController, latitutde: NSNumber, longitude: NSNumber)
+    {
+        self.navigationController?.popToViewController(self, animated: true)
+        //let locationCoordinate = CLLocationCoordinate2DMake(Double(latitutde), Double(longitude))
+        
+        /*let annotation = MKPointAnnotation()
+        annotation.coordinate = locationCoordinate
+        annotation.title = "Picture!"
+        mapView.addAnnotation(annotation)*/
+    }
     
     func alert (type: String) {
         if(type == "Success")
@@ -137,6 +146,10 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
             
         }
         
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let vc = segue.destinationViewController as! LocationViewController
+        vc.delegate = self
     }
 
 }
