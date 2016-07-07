@@ -88,8 +88,8 @@ class MainViewController: UIViewController {
                     self.mainViews.append(self.currentMainView)
                     //print("first mainviews count \(self.mainViews.count)")
                     self.view.addSubview(self.currentMainView)
-                    self.likesLabel.text = String(card["likesCount"])
-                    self.distanceLabel.text = String(card["location"])
+                    //self.likesLabel.text = String(card["likesCount"])
+                    //self.distanceLabel.text = String(card["location"])
                     
                 }
                 /*

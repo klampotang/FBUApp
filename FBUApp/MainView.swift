@@ -36,10 +36,11 @@ class MainView: UIView {
         //self.pictureView.loadInBackground()
         self.currentCard = card
         self.pictureView = UIImageView()
+        self.likesLabel = UILabel()
         //self.pictureView.image = image
-
+        self.likesLabel.text = "changing"
         let likes = card["likesCount"] as! Int
-        likesLabel = UILabel()
+        
         if likes == 1 {
             self.likesLabel.text = "\(likes) like"
         }
