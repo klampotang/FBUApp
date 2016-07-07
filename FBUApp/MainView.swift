@@ -21,7 +21,7 @@ class MainView: UIView {
     let imageMarginSpace: CGFloat = 3.0
     //var pictureView: PFImageView!
     var pictureView: UIImageView!
-    var likeLabel: UILabel!
+    var likesLabel: UILabel!
     var distanceLabel: UILabel!
     var originalCenter: CGPoint!
     var animator: UIDynamicAnimator!
@@ -37,12 +37,14 @@ class MainView: UIView {
         self.currentCard = card
         self.pictureView = UIImageView()
         //self.pictureView.image = image
+
         let likes = card["likesCount"] as! Int
+        likesLabel = UILabel()
         if likes == 1 {
-            self.likeLabel.text = "\(likes) like"
+            self.likesLabel.text = "\(likes) like"
         }
         else {
-            self.likeLabel.text = "\(likes) likes"
+            self.likesLabel.text = "\(likes) likes"
         }
         
         let imageFile = card["media"] as! PFFile
