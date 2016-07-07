@@ -7,9 +7,11 @@
 //
 
 import UIKit
-
+import Parse
 class DetailViewController: UIViewController {
     //derp
+    
+    var card: PFObject?
 
     @IBOutlet weak var estimatedPriceLabel: UILabel!
     @IBOutlet weak var tipsLabel: UILabel!

@@ -85,14 +85,21 @@ class SavedViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "detailSegue" {
+            let detailVC = segue.destinationViewController as! DetailViewController
+            let indexPath = collectionView.indexPathForCell(sender as! UICollectionViewCell)
+            let card = saved![indexPath!.row]
+            detailVC.card = card
+        }
     }
-    */
+    
 
 }
