@@ -37,6 +37,8 @@ class MainViewController: UIViewController {
     var currentMainView: MainView!
     var mainViews: [MainView] = []
     
+    @IBOutlet weak var likeLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
     @IBAction func onX(sender: AnyObject) {
         self.determineJudgement(.Left)
     }

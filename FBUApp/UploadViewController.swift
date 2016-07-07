@@ -37,6 +37,9 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
+    @IBAction func locationTextFieldTouched(sender: AnyObject) {
+        
+    }
     
     @IBAction func uploadFromCamButton(sender: AnyObject) {
         let vc = UIImagePickerController()

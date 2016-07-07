@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pfM-oB-sTH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pfM-oB-sTH">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -232,6 +232,8 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="distanceLabel" destination="Anj-nB-5BH" id="BAP-z6-ykZ"/>
+                        <outlet property="likeLabel" destination="dWN-5y-Sej" id="BQm-Fc-ikk"/>
                         <outlet property="pictureView" destination="xXm-Ei-vYn" id="4BH-E1-vxj"/>
                     </connections>
                 </viewController>
@@ -298,6 +300,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PSP-HU-Cps" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3095.5" y="825.5"/>
+        </scene>
+        <!--Location View Controller-->
+        <scene sceneID="jvt-12-ugT">
+            <objects>
+                <viewController id="vS9-qJ-Gsd" customClass="LocationViewController" customModule="FBUApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fjA-ur-LeJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ggW-8K-c3H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j26-90-B9U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="79" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Se2-CZ-00V">
+                                <rect key="frame" x="0.0" y="67" width="375" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationViewCell" rowHeight="79" id="9XG-YM-DxR" customClass="LocationViewCell" customModule="FBUApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="79"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9XG-YM-DxR" id="qJ4-YA-zV9">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeQ-iK-Pri">
+                                                    <rect key="frame" x="8" y="22" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="locationLabel" destination="PeQ-iK-Pri" id="mpU-r9-sDJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KqI-Lb-eiz">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="locationSearchBar" destination="KqI-Lb-eiz" id="YeP-05-5h8"/>
+                        <outlet property="tableView" destination="Se2-CZ-00V" id="WFk-wg-gdk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nCc-aW-puk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3519.5" y="-282.5"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="OJT-4i-rfv">
@@ -448,6 +504,10 @@
                                 <rect key="frame" x="145" y="465" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="locationTextFieldTouched:" destination="lHt-4G-p2x" eventType="touchDown" id="erb-oG-5Rq"/>
+                                    <segue destination="vS9-qJ-Gsd" kind="presentation" identifier="locationSearchSegue" id="aOy-VF-Sv1"/>
+                                </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Gf0-lx-8Hl">
                                 <rect key="frame" x="25" y="535" width="330" height="29"/>
@@ -616,7 +676,7 @@
         <image name="uploadPic" width="700" height="602"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iTb-Wj-6rp"/>
         <segue reference="vt3-6X-oAG"/>
+        <segue reference="NcW-oo-k5q"/>
     </inferredMetricsTieBreakers>
 </document>
